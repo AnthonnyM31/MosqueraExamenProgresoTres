@@ -13,6 +13,8 @@ public partial class Buscador : ContentPage
         InicializarBaseDeDatos();
     }
 
+
+
     private async void InicializarBaseDeDatos()
     {
         string rutaBD = Path.Combine(FileSystem.AppDataDirectory, "paises.db3");

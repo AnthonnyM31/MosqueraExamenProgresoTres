@@ -18,6 +18,7 @@ public partial class Lectura : ContentPage
     }
 
   
+    //SE CREA LA BASE DE DATOS
     private async void InicializarBaseDeDatos()
     {
         string rutaBD = Path.Combine(FileSystem.AppDataDirectory, "paises.db3");
@@ -30,8 +31,13 @@ public partial class Lectura : ContentPage
     {
         var paises = await _db.Table<Pais>().ToListAsync();
 
+        // los paises tendian a aparecer duplicados, estos lo soluciona filtrandolos por el nombre oficial
+        var paisesUnicos = paises.GroupBy(p => p.NombreOficial)
+                                 .Select(g => g.First())
+                                 .ToList();
+
         // no se les puede imprimir tradicionalmente, hay que convertirlos a un formato que el listview acepte
-        var paisesFormateados = paises.Select(p => new
+        var paisesFormateados = paisesUnicos.Select(p => new
         {
             NombreYRegion = $"Nombre País: {p.NombreOficial}, Región: {p.Region}, Link: {p.LinkGoogleMaps}",
             NombreBD = $"NombreBD: {p.NombreOficial}"
@@ -41,7 +47,12 @@ public partial class Lectura : ContentPage
         listadoPaises.ItemsSource = paisesFormateados;
     }
 
-    
+
+    private void RefrescarLista_Clicked(object sender, EventArgs e)
+    {
+        CargarPaisesConsultados();
+    }
+
     private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (e.SelectedItem != null)
