@@ -71,6 +71,16 @@ public partial class Buscador : ContentPage
         entradaPais.Text = string.Empty;
         resultadoBusqueda.Text = string.Empty;
     }
+
+
+    private async void VerPaisesConsultados_Clicked(object sender, EventArgs e)
+    {
+      
+        await Navigation.PushAsync(new Lectura());
+    }
+
+
+
 }
 
 public class Pais
