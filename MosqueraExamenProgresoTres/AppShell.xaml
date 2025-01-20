@@ -11,7 +11,7 @@
         <ShellContent Title="Inicio" 
                       ContentTemplate="{DataTemplate local:Buscador}" />
         <ShellContent Title="Acerca de" 
-                ContentTemplate="{DataTemplate local:MainPage}" />
+                ContentTemplate="{DataTemplate local:Lectura}" />
     </TabBar>
 
 </Shell>
