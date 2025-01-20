@@ -7,20 +7,20 @@
 
 
     <StackLayout Padding="20">
-        <!-- Entrada de texto para el nombre del país -->
+        
         <Entry x:Name="entradaPais" Placeholder="Ingresa el nombre del país" />
 
-        <!-- Botón para realizar la búsqueda -->
+    
         <Button Text="Buscar"
                 Clicked="BuscarPais_Clicked"
                 Margin="0,10,0,0"/>
 
-        <!-- Botón para limpiar el campo de texto -->
+      
         <Button Text="Limpiar"
                 Clicked="LimpiarEntrada_Clicked"
                 Margin="0,10,0,0"/>
 
-        <!-- Etiqueta para mostrar los resultados de la búsqueda -->
+     
         <Label x:Name="resultadoBusqueda"
                TextColor="Black"
                Margin="0,20,0,0" />
