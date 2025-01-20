@@ -7,9 +7,11 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MosqueraExamenProgresoTres">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent Title="Inicio" 
+                      ContentTemplate="{DataTemplate local:Buscador}" />
+        <ShellContent Title="Acerca de" 
+                ContentTemplate="{DataTemplate local:MainPage}" />
+    </TabBar>
 
 </Shell>

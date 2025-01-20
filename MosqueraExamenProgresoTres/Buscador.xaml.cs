@@ -1,12 +1,9 @@
-using Microsoft.Maui.Controls;
 using Newtonsoft.Json;
 using SQLite;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+
 namespace MosqueraExamenProgresoTres;
 
-public partial class Buscador : TabbedPage
+public partial class Buscador : ContentPage
 {
     private SQLiteAsyncConnection _db;
 
@@ -50,7 +47,7 @@ public partial class Buscador : TabbedPage
 
                 resultadoBusqueda.Text = $"Nombre: {nombreOficial}\nRegión: {region}\nGoogle Maps: {linkGoogleMaps}";
 
-                // Guardar en SQLite
+                
                 await _db.InsertAsync(new Pais
                 {
                     NombreOficial = nombreOficial,
