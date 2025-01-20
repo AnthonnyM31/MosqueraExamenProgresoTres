@@ -42,11 +42,11 @@ public partial class Lectura : ContentPage
     }
 
     
-   /* private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (e.SelectedItem != null)
         {
           
         }
-    }*/
+    }
 }
