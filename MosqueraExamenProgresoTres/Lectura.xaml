@@ -3,10 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MosqueraExamenProgresoTres.Lectura"
              xmlns:local="clr-namespace:MosqueraExamenProgresoTres"
-             Title="Tu Nombre y Apellido">
+             Title="Anthonny Mosquera">
 
     <StackLayout Padding="20">
-        <!-- listView para mostrar los paises consultados -->
+        <!-- para evitar que no se actualicen los datos automaticamente agregamos un boton para hacerlo manual -->
+        <Button Text="Refrescar Lista"
+                Clicked="RefrescarLista_Clicked"
+                Margin="0,0,0,20" />
+
+        <!-- ListView para mostrar los países consultados -->
         <ListView x:Name="listadoPaises"
                   ItemSelected="ListView_ItemSelected">
             <ListView.ItemTemplate>
